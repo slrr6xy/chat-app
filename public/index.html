@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="ja">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>チャットアプリ</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <h1 id="main-title">チャットアプリ</h1>
+    <button id="show-create">ルーム作成</button>
+    <button id="show-join">ルーム入室</button>
+
+    <div id="create-form" style="display: block">
+      <h2>ルーム作成</h2>
+      <div>
+        <p>Username:</p>
+        <input
+          id="create-username"
+          autocomplete="off"
+          placeholder="Enter username"
+        />
+      </div>
+      <div>
+        <p>Room name:</p>
+        <input
+          id="create-room"
+          autocomplete="off"
+          placeholder="Enter room name"
+        />
+      </div>
+      <div>
+        <p>Password:</p>
+        <input
+          id="create-password"
+          placeholder="Password (if required)"
+          type="password"
+        />
+      </div>
+      <button id="createBtn">Create Room</button>
+      <p id="create-error" style="color: red"></p>
+    </div>
+
+    <div id="join-form" style="display: none">
+      <h2>ルーム入室</h2>
+      <div>
+        <p>Username:</p>
+        <input
+          id="join-username"
+          autocomplete="off"
+          placeholder="Enter username"
+        />
+      </div>
+      <div>
+        <p>Room name:</p>
+        <input
+          id="join-room"
+          autocomplete="off"
+          placeholder="Enter room name"
+        />
+      </div>
+      <div>
+        <p>Password:</p>
+        <input
+          id="join-password"
+          placeholder="Password (if required)"
+          type="password"
+        />
+      </div>
+      <button id="joinBtn">Join Room</button>
+      <p id="join-error" style="color: red"></p>
+    </div>
+
+    <div id="chat" style="display: none">
+      <h3 id="chat-room-title"></h3>
+      <p id="user-info"></p>
+      <button id="leaveBtn">退出</button>
+      <div
+        id="messages"
+        style="border: 1px solid #aaa; height: 200px; overflow-y: auto"
+      ></div>
+      <input id="messageInput" placeholder="Type a message" />
+      <button id="sendBtn">送信</button>
+    </div>
+
+    <script src="/socket.io/socket.io.js"></script>
+    <script src="script.js"></script>
+  </body>
+</html>
